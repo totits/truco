@@ -49,84 +49,37 @@ class Mano():
 
         carta_j1, carta_j2 = Mano.seleccion_carta(self)
         
-        #FALTA ARREGLAR ESTO. QUE TIRE EN QUE JERARQUIA ESTA LA CARTA
-        for i in range(0, 14):
-            if carta_j1 in jerarquia[i]:
-                print(jerarquia[i].index(carta_j1))
+        # busco carta 1 en la lista de jerarquias
+        for i in range(len(jerarquia)):
+            for x in range (len(jerarquia[i])):
+                if (carta_j1[0] in jerarquia[i][x]) and (carta_j1[1] in jerarquia[i][x]):
+                    carta_j1_jerarquia = jerarquia[i]
+                    # busco carta 2 en la lista de jerarquias
+                    for y in range(len(jerarquia)):
+                        for z in range (len(jerarquia[y])):
+                            if (carta_j2[0] in jerarquia[y][z]) and (carta_j2[1] in jerarquia[y][z]):
+                                carta_j2_jerarquia = jerarquia[y]
+                                # comparo las jerarquias de las cartas
+                                if i < y:
+                                    ganador = 1
+                                elif i > y:
+                                    ganador = 2
+                                else:
+                                    ganador = 3
         
-        """
-        if carta_j1 in jerarquia[0]:
-            carta_j1_jerarquia = 1
-        elif carta_j1 in jerarquia[1]:
-            carta_j1_jerarquia = 2
-        elif carta_j1 in jerarquia[2]:
-            carta_j1_jerarquia = 3
-        elif carta_j1 in jerarquia[3]:
-            carta_j1_jerarquia = 4
-        elif carta_j1 in jerarquia[4]:
-            carta_j1_jerarquia = 5
-        elif carta_j1 in jerarquia[5]:
-            carta_j1_jerarquia = 6
-        elif carta_j1 in jerarquia[6]:
-            carta_j1_jerarquia = 7
-        elif carta_j1 in jerarquia[7]:
-            carta_j1_jerarquia = 8
-        elif carta_j1 in jerarquia[8]:
-            carta_j1_jerarquia = 9
-        elif carta_j1 in jerarquia[9]:
-            carta_j1_jerarquia = 10
-        elif carta_j1 in jerarquia[10]:
-            carta_j1_jerarquia = 11
-        elif carta_j1 in jerarquia[11]:
-            carta_j1_jerarquia = 12
-        elif carta_j1 in jerarquia[12]:
-            carta_j1_jerarquia = 13
-        elif carta_j1 in jerarquia[13]:
-            carta_j1_jerarquia = 14
-        else:
-            pass
+
+
+                                
+
+
+
+                    
+            
         
-        if carta_j2 in jerarquia[0]:
-            carta_j2_jerarquia = 1
-        elif carta_j2 in jerarquia[1]:
-            carta_j2_jerarquia = 2
-        elif carta_j2 in jerarquia[2]:
-            carta_j2_jerarquia = 3
-        elif carta_j2 in jerarquia[3]:
-            carta_j2_jerarquia = 4
-        elif carta_j2 in jerarquia[4]:
-            carta_j2_jerarquia = 5
-        elif carta_j2 in jerarquia[5]:
-            carta_j2_jerarquia = 6
-        elif carta_j2 in jerarquia[6]:
-            carta_j2_jerarquia = 7
-        elif carta_j2 in jerarquia[7]:
-            carta_j2_jerarquia = 8
-        elif carta_j2 in jerarquia[8]:
-            carta_j2_jerarquia = 9
-        elif carta_j2 in jerarquia[9]:
-            carta_j2_jerarquia = 10
-        elif carta_j2 in jerarquia[10]:
-            carta_j2_jerarquia = 11
-        elif carta_j2 in jerarquia[11]:
-            carta_j2_jerarquia = 12
-        elif carta_j2 in jerarquia[12]:
-            carta_j2_jerarquia = 13
-        elif carta_j2 in jerarquia[13]:
-            carta_j2_jerarquia = 14
-        else:
-            pass
-        
-        if carta_j1_jerarquia < carta_j2_jerarquia:
-            ganador = "jugador 1"
-        elif carta_j1_jerarquia > carta_j2_jerarquia:
-            ganador = "jugador 2"
-        else:
-            ganador = "empate"
-        """
 
         print(carta_j1, carta_j2)
-        print(f"ganador: chupala")
+        print(f"ganador: {ganador}")
+
 
         
 
